@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}Film Öneri Chatbot{% endblock %}
+
+{% block content %}
+    <h1>Film Öneri Chatbot</h1>
+    <p>Aşağıdaki sohbet kutusunu kullanarak film önerileri alabilirsiniz.</p>
+
+    <!-- Dialogflow Messenger Integration -->
+    <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+    <df-messenger
+      intent="WELCOME"
+      chat-title="FilmOneriBotu"
+      agent-id="2f838284-3aff-4e08-b5b4-117323bf8bb2"
+      language-code="tr">
+    </df-messenger>
+
+    <p><a href="{% url 'home' %}">Ana Sayfa</a></p>
+{% endblock %}
