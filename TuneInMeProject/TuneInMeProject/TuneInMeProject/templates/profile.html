@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}Profil Sayfası{% endblock %}
+
+{% block content %}
+<h1>Profil Sayfası</h1>
+
+<p><strong>Toplam İzlenen Film:</strong> {{ total_movies }}</p>
+<p><strong>Toplam Puan:</strong> {{ points }}</p>
+<p><strong>Seviye:</strong> {{ level }}</p>
+<p><strong>Günlük İzleme Serisi:</strong> {{ streak_count }} gün üst üste</p>
+
+<h2>Haftalık Görevler:</h2>
+<ul>
+    {% if weekly_challenges %}
+        {% for challenge in weekly_challenges %}
+            <li>{{ challenge }}</li>
+        {% endfor %}
+    {% else %}
+        <li>Bu hafta için görev bulunmamaktadır.</li>
+    {% endif %}
+</ul>
+
+<p><a href="{% url 'home' %}">Ana Sayfaya Dön</a></p>
+{% endblock %}
